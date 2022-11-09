@@ -18,9 +18,10 @@ import {
 } from './release-server.js';
 import * as CMS from '@ev_ex/web-cms-build';
 
+/** Console Colors */
 const c = {
-  red: '\x1b[31m',
-  yellow: '\x1b[93m',
+  r: '\x1b[31m',
+  y: '\x1b[93m',
   reset: '\x1b[0m',
 };
 
@@ -78,19 +79,19 @@ function init() {
     validatePaths(parsedConfig);
     return parsedConfig;
   } catch (e) {
-    console.error(`${c.red}\n[CONFIG ERROR]${c.reset}`);
+    console.error(`${c.r}\n[CONFIG ERROR]${c.reset}`);
     if (e instanceof ZodError) {
       handleConfigError(e);
       process.exit(1);
     }
-    console.error(c.yellow, e, c.reset);
+    console.error(c.y, e, c.reset);
     process.exit(1);
   }
 }
 
 function handleConfigError(e: ZodError) {
   console.error(
-    `${c.yellow}${e.issues[0].path.join('.')} is ${e.issues[0].message}${c.reset}`
+    `${c.y}${e.issues[0].path.join('.')} is ${e.issues[0].message}${c.reset}`
   );
 }
 
