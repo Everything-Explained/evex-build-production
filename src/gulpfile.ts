@@ -1,6 +1,6 @@
 import { existsSync } from 'fs';
 import { resolve as pathResolve } from 'path';
-import _config from './.gulpconfig.json';
+import _config from './.gulpconfig.json' assert { type: 'json' };
 import z, { ZodError } from 'zod';
 import g from 'gulp';
 import {
