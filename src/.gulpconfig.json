@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "client": {
+      "src": "../../web-client",
+      "dist": "../../web-client/dist",
+      "stage": "../../evex-staging/client",
+      "release": "../../evex-production/client"
+    },
+    "server": {
+      "src": "../../fastify-server",
+      "dist": "../../fastify-server/dist",
+      "stage": "../../evex-staging/server",
+      "release": "../../evex-production/server"
+    }
+  }
+}
+
+

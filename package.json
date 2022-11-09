@@ -1,0 +1,28 @@
+{
+  "name": "evex-release",
+  "version": "1.0.0",
+  "description": "Builds web and server files into release directory",
+  "type": "module",
+  "scripts": {
+    "release": "cross-env NODE_ENV=development gulp --cwd ./dist release-client"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/gulp": "^4.0.9",
+    "@types/node": "^18.11.4",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint": "^8.26.0",
+    "prettier": "^2.7.1",
+    "terser": "^5.15.1"
+  },
+  "dependencies": {
+    "@ev_ex/web-cms-build": "^2.0.3",
+    "cross-env": "^7.0.3",
+    "del": "^7.0.0",
+    "gulp": "^4.0.2",
+    "vite": "^3.1.8",
+    "zod": "^3.19.1"
+  }
+}
