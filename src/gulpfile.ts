@@ -45,8 +45,11 @@ const Config = z.object({
 const validConfig = init();
 const clientReleasePath = validConfig.paths.client.release;
 const clientStagingPath = validConfig.paths.client.stage;
-const buildCMS = (rootPath: string, dataPath: string) => (done: () => void) =>
-  CMS.build(rootPath, dataPath, done);
+const setupCMSBuild = (rootPath: string, dataPath: string) => {
+  return function buildCMS(done: () => void) {
+    return CMS.build(rootPath, dataPath, done);
+  };
+};
 
 g.task(
   'release-client',
@@ -54,7 +57,7 @@ g.task(
     compileClient,
     cleanClientForRelease,
     copyClientForRelease,
-    buildCMS(clientReleasePath, `${clientReleasePath}/_data`)
+    setupCMSBuild(clientReleasePath, `${clientReleasePath}/_data`)
   )
 );
 g.task(
@@ -63,7 +66,7 @@ g.task(
     compileClient,
     cleanClientForStaging,
     copyClientForStaging,
-    buildCMS(clientStagingPath, `${clientStagingPath}/_data`)
+    setupCMSBuild(clientStagingPath, `${clientStagingPath}/_data`)
   )
 );
 
