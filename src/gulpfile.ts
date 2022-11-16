@@ -60,6 +60,7 @@ g.task(
     setupCMSBuild(clientReleasePath, `${clientReleasePath}/_data`)
   )
 );
+
 g.task(
   'stage-client',
   g.series(
@@ -69,6 +70,8 @@ g.task(
     setupCMSBuild(clientStagingPath, `${clientStagingPath}/_data`)
   )
 );
+
+g.task('stage-data', setupCMSBuild(clientStagingPath, `${clientStagingPath}/_data`));
 
 g.task('release-server', g.series(cleanServerForRelease, copyServerForRelease));
 g.task('stage-server', g.series(cleanServerForStaging, copyServerForStaging));
