@@ -70,6 +70,10 @@ g.task(
   'stage-client',
   g.series(compileClient, cleanClientForStaging, copyClientForStaging)
 );
+
+g.task(
+  'stage-changelog',
+  setupChangeLogBuild(clientStagingPath, `${clientStagingPath}/_data`)
 );
 
 g.task('stage-data', setupCMSBuild(clientStagingPath, `${clientStagingPath}/_data`));

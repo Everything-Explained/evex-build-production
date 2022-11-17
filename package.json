@@ -7,6 +7,7 @@
     "release-client": "cross-env NODE_ENV=production gulp --cwd ./dist release-client",
     "stage-client": "cross-env NODE_ENV=production gulp --cwd ./dist stage-client",
     "stage-data": "cross-env NODE_ENV=development gulp --cwd ./dist stage-data",
+    "stage-changelog": "cross-env NODE_ENV=development gulp --cwd ./dist stage-changelog",
     "stage-server": "cross-env NODE_ENV=production gulp --cwd ./dist stage-server"
   },
   "author": "",
@@ -21,7 +22,7 @@
     "terser": "^5.15.1"
   },
   "dependencies": {
-    "@ev_ex/web-cms-build": "^2.0.3",
+    "@ev_ex/web-cms-build": "^2.0.4",
     "cross-env": "^7.0.3",
     "del": "^7.0.0",
     "gulp": "^4.0.2",
