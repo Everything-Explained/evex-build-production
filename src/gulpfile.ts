@@ -50,6 +50,11 @@ const setupCMSBuild = (rootPath: string, dataPath: string) => {
     return CMS.build(rootPath, dataPath, done);
   };
 };
+const setupChangeLogBuild = (rootPath: string, dataPath: string) => {
+  return function buildChangelog(done: () => void) {
+    return CMS.buildChangelog(rootPath, dataPath, done);
+  };
+};
 
 g.task(
   'release-client',
@@ -63,12 +68,8 @@ g.task(
 
 g.task(
   'stage-client',
-  g.series(
-    compileClient,
-    cleanClientForStaging,
-    copyClientForStaging,
-    setupCMSBuild(clientStagingPath, `${clientStagingPath}/_data`)
-  )
+  g.series(compileClient, cleanClientForStaging, copyClientForStaging)
+);
 );
 
 g.task('stage-data', setupCMSBuild(clientStagingPath, `${clientStagingPath}/_data`));
