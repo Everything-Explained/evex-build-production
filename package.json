@@ -8,7 +8,8 @@
     "stage-client": "cross-env NODE_ENV=production gulp --cwd ./dist stage-client",
     "stage-data": "cross-env NODE_ENV=development gulp --cwd ./dist stage-data",
     "stage-changelog": "cross-env NODE_ENV=development gulp --cwd ./dist stage-changelog",
-    "stage-server": "cross-env NODE_ENV=production gulp --cwd ./dist stage-server"
+    "stage-server": "cross-env NODE_ENV=production gulp --cwd ./dist stage-server",
+    "release-server": "cross-env NODE_ENV=production gulp --cwd ./dist release-server"
   },
   "author": "",
   "license": "ISC",
