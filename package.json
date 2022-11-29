@@ -22,7 +22,7 @@
     "terser": "^5.15.1"
   },
   "dependencies": {
-    "@ev_ex/web-cms-build": "^2.0.4",
+    "@ev_ex/web-cms-build": "^2.1.0",
     "cross-env": "^7.0.3",
     "del": "^7.0.0",
     "gulp": "^4.0.2",
