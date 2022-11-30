@@ -57,13 +57,20 @@ const setupChangeLogBuild = (rootPath: string, dataPath: string) => {
 };
 
 g.task(
-  'release-client',
+  'release',
   g.series(
     compileClient,
     cleanClientForRelease,
     copyClientForRelease,
-    setupCMSBuild(clientReleasePath, `${clientReleasePath}/_data`)
+    setupCMSBuild(clientReleasePath, `${clientReleasePath}/_data`),
+    cleanServerForRelease,
+    copyServerForRelease
   )
+);
+
+g.task(
+  'release-client',
+  g.series(compileClient, cleanClientForRelease, copyClientForRelease)
 );
 
 g.task(
@@ -76,6 +83,7 @@ g.task(
   setupChangeLogBuild(clientStagingPath, `${clientStagingPath}/_data`)
 );
 
+g.task('release-data', setupCMSBuild(clientReleasePath, `${clientReleasePath}/_data`));
 g.task('stage-data', setupCMSBuild(clientStagingPath, `${clientStagingPath}/_data`));
 
 g.task('release-server', g.series(cleanServerForRelease, copyServerForRelease));

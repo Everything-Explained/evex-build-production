@@ -4,9 +4,11 @@
   "description": "Builds web and server files into release directory",
   "type": "module",
   "scripts": {
+    "release": "cross-env NODE_ENV=production gulp --cwd ./dist release",
     "release-client": "cross-env NODE_ENV=production gulp --cwd ./dist release-client",
     "stage-client": "cross-env NODE_ENV=production gulp --cwd ./dist stage-client",
     "stage-data": "cross-env NODE_ENV=development gulp --cwd ./dist stage-data",
+    "release-data": "cross-env NODE_ENV=production gulp --cwd ./dist release-data",
     "stage-changelog": "cross-env NODE_ENV=development gulp --cwd ./dist stage-changelog",
     "stage-server": "cross-env NODE_ENV=production gulp --cwd ./dist stage-server",
     "release-server": "cross-env NODE_ENV=production gulp --cwd ./dist release-server"
