@@ -16,7 +16,7 @@ import {
   cleanServerForStaging,
   copyServerForStaging,
 } from './release-server.js';
-import * as CMS from '@ev_ex/web-cms-build';
+import * as CMS from '@ev_ex/evex-build-cms';
 
 /** Console Colors */
 const c = {
