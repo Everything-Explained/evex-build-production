@@ -1,16 +1,16 @@
 {
   "paths": {
     "client": {
-      "src": "../../web-client",
-      "dist": "../../web-client/dist",
-      "stage": "../../evex-staging/client",
-      "release": "../../evex-production/client"
+      "src": "../../client",
+      "dist": "../../client/dist",
+      "stage": "../../staging/client",
+      "release": "../../production/client"
     },
     "server": {
-      "src": "../../fastify-server",
-      "dist": "../../fastify-server/dist",
-      "stage": "../../evex-staging/server",
-      "release": "../../evex-production/server"
+      "src": "../../server",
+      "dist": "../../server/dist",
+      "stage": "../../staging/server",
+      "release": "../../production/server"
     }
   }
 }
