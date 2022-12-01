@@ -29,6 +29,7 @@ export function initServerCopy(destPath: string) {
         `${root}/config.json`,
         `${root}/package.json`,
         `${root}/package-lock.json`,
+        `${root}/src/**/*.placeholder`,
         `!${dist}/scratch.js`,
         `!${root}/gulpfile.js`,
       ])
