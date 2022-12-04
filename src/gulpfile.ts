@@ -87,7 +87,7 @@ g.task('release-data', setupCMSBuild(clientReleasePath, `${clientReleasePath}/_d
 g.task('stage-data', setupCMSBuild(clientStagingPath, `${clientStagingPath}/_data`));
 
 g.task('release-server', g.series(cleanServerForRelease, copyServerForRelease));
-g.task('stage-server', g.series(cleanServerForStaging, copyServerForStaging));
+g.task('stage-server', g.series(copyServerForStaging));
 g.task('hello', (done) => {
   done();
 });
